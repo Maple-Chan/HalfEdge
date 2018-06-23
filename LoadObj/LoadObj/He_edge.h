@@ -70,6 +70,7 @@ public:
 	Edge *pre;
 	Edge *next;
 	Face *face;
+	int faceID;
 
 	HalfEdge *inhalfedge;
 	HalfEdge *outhalfedge;
@@ -110,14 +111,15 @@ public:
 
 class HalfEdge
 {//Pair 表示时候匹配，Brother是对边有关的存放与索取
+public:
 	Edge *edge; //this halfedge belong to which edge
-
+	Face *face;
 	Vertex *sv; //the start vertex of this halfedge
 	Vertex *ev; //the end vertex of this halfedge
 	HalfEdge *brother;
 	bool isPiared;
 
-public:
+
 
 	HalfEdge *next;
 	HalfEdge *pre;
@@ -166,24 +168,27 @@ class Solid
 {
 public:
 	int id;
-	Vertex *vertexs_list;
-	Face *faces_list; // list of all faces to conclass this solid
+	vector<Vertex> vertexs_list;
+	vector<Face> faces_list; // list of all faces to conclass this solid
+	vector<Edge> edges_list; // list of all edges to conclass this solid->to build the frame
 
-	Edge *edges_list; // list of all edges to conclass this solid->to build the frame
-	vector<HalfEdge*> halfedges_list;
-	Solid *next;
-	Solid *pre;
+	vector<HalfEdge> halfedges_list;
+
 
 	int vnum;//the count of all vertexs
 	int fnum;//the count of all faces
 
-	Solid() : id(0), faces_list(NULL), edges_list(NULL), halfedges_list(NULL), next(NULL), pre(NULL), fnum(0), vnum(0) {}
+	Solid() : id(0), faces_list(NULL), edges_list(NULL), halfedges_list(NULL), fnum(0), vnum(0) {}
 	~Solid();
 	void make_Solid();
+	int load_Vertex(readFile & file, int fn);
+	int load_Edges(readFile & file);
 	int load_Face(readFile &file, int fn);
-	void FindBro(vector<HalfEdge*>& list, int fn);//根据当前半边所属的边查找他的Pair
-	void draw();
+	int Solid::load_Halfedge();
 
+	int Solid::findEdge(Vertex v1, Vertex v2);
+	void FindBro(vector<HalfEdge>& list, int fn);//根据当前半边所属的边查找他的Pair
+	void draw();
 
 };
 

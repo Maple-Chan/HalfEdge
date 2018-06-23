@@ -39,7 +39,6 @@ int main(int argc, char * argv[])
 	//		2)计算预测偏差
 	//		3)删除奇点的信息  （奇异点需要保留，所以如果是就设为偶点）
 	//3.重新生成网格
-	SetEvenVertex( *(_50bj.faces_list->e2->vertex1) );//任选一个顶点
 
 
 

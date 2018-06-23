@@ -1,8 +1,5 @@
-﻿  ReadFile.cpp
-  prefix.cpp
-  main.cpp
-  LoopAlgorithm.cpp
-  He_edge.cpp
-  正在生成代码...
-  LoadObj.vcxproj -> F:\Maple\Ztudents\u3D\Out_of_Normal\WinterHoliday_U3\LoadObj\Debug\LoadObj.exe
-  LoadObj.vcxproj -> F:\Maple\Ztudents\u3D\Out_of_Normal\WinterHoliday_U3\LoadObj\Debug\LoadObj.pdb (Full PDB)
+﻿  He_edge.cpp
+e:\git\graphic\loadobj\loadobj\he_edge.cpp(104): warning C4018: “<”: 有符号/无符号不匹配
+e:\git\graphic\loadobj\loadobj\he_edge.cpp(145): warning C4018: “<”: 有符号/无符号不匹配
+  LoadObj.vcxproj -> E:\Git\Graphic\LoadObj\Debug\LoadObj.exe
+  LoadObj.vcxproj -> E:\Git\Graphic\LoadObj\Debug\LoadObj.pdb (Full PDB)
