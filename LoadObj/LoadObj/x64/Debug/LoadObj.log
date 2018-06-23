@@ -1,0 +1,13 @@
+﻿  ReadFile.cpp
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\readfile.cpp(38): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\readfile.cpp(41): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\readfile.cpp(44): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\readfile.cpp(57): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\readfile.cpp(59): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\readfile.cpp(61): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  main.cpp
+f:\maple\ztudents\u3d\out_of_normal\winterholiday_u3\loadobj\loadobj\main.cpp(28): warning C4091: “”: 没有声明变量时忽略“unsigned __int64”的左侧
+  He_edge.cpp
+  正在生成代码...
+  LoadObj.vcxproj -> F:\Maple\Ztudents\u3D\Out_of_Normal\WinterHoliday_U3\LoadObj\x64\Debug\LoadObj.exe
+  LoadObj.vcxproj -> F:\Maple\Ztudents\u3D\Out_of_Normal\WinterHoliday_U3\LoadObj\x64\Debug\LoadObj.pdb (Full PDB)
