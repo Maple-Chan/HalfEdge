@@ -26,6 +26,9 @@ void Solid::make_Solid()
 	}
 	//-初始化点集-----------End
 
+	//初始化边集
+
+
 	//-初始化面---------Start
 	load_Face(Solid_5obj, fnum);
 	//-初始化面---------End
@@ -166,57 +169,7 @@ void Solid::FindBro(vector<HalfEdge*>& list,int fn)
 
 int Solid::load_Face(readFile& file, int fn)
 {
-	faces_list = new Face[fn];
-	
-	int v1, v2, v3;
-	for (int i = 0; i < fn; ++i)
-	{ 
-		//建立边
-		Edge* newEdge = new Edge[3];
-		v1 = file.ffaces[i].v[0];//第一个顶点
-		v2 = file.ffaces[i].v[1];
-		v3 = file.ffaces[i].v[2];
-		//cout << "\nv1: " << v1 << " v2: " << v2 << " v3: " << v3 << endl;
-		//为边附上点
-		newEdge->vertex1 = &vertexs_list[v1];
-		newEdge->vertex2 = &vertexs_list[v2];
-		(newEdge + 1)->vertex1 = &vertexs_list[v2];
-		(newEdge + 1)->vertex2 = &vertexs_list[v3];
-		(newEdge + 2)->vertex1 = &vertexs_list[v3];
-		(newEdge + 2)->vertex2 = &vertexs_list[v1];
-		//为边构建边指针关系
-		newEdge->next = (newEdge + 1);
-		newEdge->pre = (newEdge + 2);
-		(newEdge + 1)->next = (newEdge + 2);
-		(newEdge + 1)->pre = newEdge;
-		(newEdge + 2)->next = newEdge;
-		(newEdge + 2)->pre = (newEdge + 1);
 
-		//点指向边的指针
-		newEdge->vertex1->edge = newEdge;
-		(newEdge + 1)->vertex1->edge = (newEdge + 1);
-		(newEdge + 2)->vertex1->edge = (newEdge + 2);
-		newEdge->vertex2->edge = newEdge;
-		(newEdge + 1)->vertex2->edge = (newEdge + 1);
-		(newEdge + 2)->vertex2->edge = (newEdge + 2);
-
-		//建立面
-		(faces_list + i)->id = i;
-		(faces_list + i)->e1 = newEdge;
-		(faces_list + i)->e2 = newEdge+1;
-		(faces_list + i)->e3 = newEdge+2;
-		
-		(faces_list + i)->next = (faces_list + i + 1);
-		(faces_list + i)->pre = (faces_list + i - 1);
-
-		//边指向面的指针
-		newEdge->face = (faces_list + i);
-		(newEdge + 1)->face = (faces_list + i);
-		(newEdge + 2)->face = (faces_list + i);
-	}
-
-	faces_list->pre = faces_list + fn - 1;
-	(faces_list + fn - 1)->next = faces_list;
 	return 0;
 }
 
